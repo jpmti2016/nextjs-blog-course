@@ -6,7 +6,7 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData(); //
+  const allPostsData = getSortedPostsData();
   return {
     props: {
       allPostsData,
@@ -46,11 +46,11 @@ export default function Home({ allPostsData }) {
             </li>
           ))}
         </ul>
+        <h2 className={utilStyles.headingLg}>Static Generated Post</h2>
+        <Link href="/first-post">
+          <a>First Post</a>
+        </Link>
       </section>
-      <h2>Posts</h2>
-      <Link href="/first-post">
-        <a>First Post</a>
-      </Link>
     </Layout>
   );
 }
